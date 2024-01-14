@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+  --color-primary: #6C9BCF;
+  --color-danger: #FF0060;
+  --color-success: #1B9C85;
+  --color-warning: #F7D060;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.dark-mode-variables {
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables {
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark:
+}
+
+.container-settings {
+  display: grid;
+  width: 96%;
+  color: var(--color-dark);
+  background-color: var(--color-background);
+  margin: 0 auto;
+  gap: 1.8rem;
+  grid-template-columns: 12rem auto;
+  font-size: 14px;
+  font-family: 'poppins', sans-serif;
+  user-select: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: 0;
+  border: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+li,
+a,
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #010608;
+  text-decoration: none;
+}
+
+.container-settings .navbar {
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+  padding-bottom: 0;
+}
+
+.container-settings .logo {
+  cursor: pointer;
+}
+
+.container-settings .navbar li {
+  display: inline-block;
+  padding: 0px 30px;
+}
+
+.container-settings .navbar li a {
+  transition: all .3s ease 0s;
+}
+
+.container-settings .navbar li a:hover {
+  color: #0088a9;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+.container-settings .navbar ul {
+  padding-left: 100px;
+}
+
+
+
+
+/* LEFT PANEL */
+
+.container-settings .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  padding-top: 10px;
+  padding-left: 50px;
+}
+
+.container-settings .main-frame {
+  min-width: 400px;
+  max-width: 550px;
+  width: 100%;
+  /* padding: 10px; */
+  background-color: #b8c5d6;
+  margin: 30px 0;
+  margin-top: 4rem;
+  border-radius: 30px;
+  box-shadow: 20px 15px 45px -10px rgba(88, 89, 95, 0.7);
+  justify-content: left;
+  align-items: normal;
+  /* background: linear-gradient(350deg, rgba(163, 155, 168, 1) 70%, rgba(253, 219, 192, 0.082) 90%); */
+}
+
+form {
+  text-align: left;
+  height: 100%;
+  padding: 1rem;
+  margin: 0;
+  filter: none;
+}
+
+.container-settings .formInput {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 20px 10px;
+  height: 30px;
+  width: 100%;
+  filter: none;
+  transition: all 0.3s ease 0s;
+  font-size: 20px;
+  background-color: rgb(247, 245, 248);
+  color: black;
+}
+
+.container-settings form label {
+  margin: 0;
+  color: var(--color-info-dark);
+  color: black;
+}
+
+
+.container-settings .type {
+  margin-top: 0;
+  margin-right: 0;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px 10px;
+  height: auto;
+  width: 100%;
+  transform: scale(101%);
+}
+
+.container-settings .content {
+  height: 300px;
+  padding: 5px;
+}
+
+.container-settings .submitButton {
+  padding: 15px 20px;
+  float: right;
+  margin: 1rem 1rem;
+  margin-top: 0;
+  outline: none;
+  border: none;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 20px;
+  background-color: #2562b1;
+  box-shadow: 3px 3px 10px #454545;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.container-settings .submitButton:hover {
+  background-color: #174c92;
+}
+
+
+
+/* RIGHT SIDE */
+
+.container-settings .right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.container-settings .right-frame {
+  background-color: #0088a9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container-settings .test {
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+.container-settings .clear {
+  clear: both;
+}
+
+.container-settings .footer {
+  margin-top: 100px;
+  background-color: #010608;
+  height: 200px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div label {
+  margin: 0;
+  margin-left: 10px;
+  transform: translateY(10px);
+  font-weight: 600;
+}
+
+.container-settings .right .card {
+  margin-top: 11rem;
+}
+
+.container-settings .card-type h1 {
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.container-settings .card-content {
+  padding: 10px 30px;
+  padding-top: 0;
+
+}
+
+.container-settings .card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 270px;
+}
+
+.container-settings .card-version {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+}
+
+.container-settings .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container-settings .vodka {
+  text-align: right;
+  display: flex;
+  justify-content: right;
+  /* align-items: end; */
+  padding: 10px 15px;
+  width: 100%;
+}
+
+
+.container-settings .vodka img {
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  justify-content: right
+}
+
+.container-settings .options {
+  clear: both;
+  padding: 40px;
+  padding-top: 60px;
+}
+
+.container-settings .options img {
+  width: 60px;
+}
+
+.container-settings .options .image-button {
+  margin: 20px;
+  padding: 25px 25px;
+  border-radius: 100px;
+  background-color: #b8c5d6;
+  transition: all 0.3s ease;
+}
+
+.container-settings .options .image-button-active {
+  margin: 20px;
+  padding: 25px 25px;
+  border-radius: 100px;
+  background-color: #2562b1;
+  transition: all 0.3s ease;
+}
+
+
+
+/* ADMIN PANEL CSS */
+
+.admin-panel-container {
+  display: grid;
+  width: 96%;
+  color: var(--color-dark);
+  background-color: var(--color-background);
+  margin: 0 auto;
+  gap: 1.8rem;
+  grid-template-columns: 12rem auto 20rem;
+  font-size: 14px;
+  font-family: 'poppins', sans-serif;
+  user-select: none;
+}
+
+aside {
+  height: 100vh;
+}
+
+aside .toogle {
+  display: fleex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+}
+
+aside .toogle .logo {
+  display: flex;
+  gap: 0.5rem;
+}
+
+aside .toogle .logo img {
+  width: 2rem;
+  height: 2.3rem;
+}
+
+aside .toogle .close {
+  padding-right: 1rem;
+  display: none;
+}
+
+aside .sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 15px;
+  height: 88vh;
+  position: relative;
+  top: 1.5rem;
+  transition: 0.3s ease;
+}
+
+aside .sidebar:hover {
+  box-shadow: none;
+}
+
+aside .logo .danger,
+aside .logo h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+aside .danger {
+  color: var(--color-danger);
+}
+
+aside .side-bar-elements span {
+  font-size: 14px;
+  margin-left: 1rem;
+}
+
+aside .sidebar a{
+  display: flex;
+  align-items: center;
+  color: var(--color-info-dark);
+  height: 3.7rem;
+  gap: 1rem;
+  position: relative;
+  margin-left: 2rem;
+  transition: all 0.3s ease;
+}
+
+aside .sidebar a span{
+  transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child{
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}
+
+
+
+aside .sidebar a.active{
+  width: 100%;
+  color: var(--color-primary);
+  background-color: var(--color-light);
+  margin-left: 0;
+}
+
+
+aside .sidebar a.active::before{
+  content: '';
+  width: 6px;
+  height: 18px;
+  background-color: var(--color-primary);
+}
+
+aside .sidebar a.active span{
+  color: var(--color-primary);
+  margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar a:hover{
+  color: var(--color-primary);
+}
+
+aside .sidebar a:hover span{
+  margin-left: 0.6rem;
+}
+
+aside .sidebar .message-count{
+  background-color: var(--color-danger);
+  padding: 2px 6px;
+  color: var(--color-white);
+  font-size: 11px;
+  border-radius: var(--border-radius-1);
+}
+
+
+
+/* MAIN CONTENT */
+
+.analyse {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+main .analyse > div {
+  background-color: var(--color-white);
+  padding: var(--card-padding);
+  padding-bottom: 0.5rem;
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: all 0.3 ease;
+}
+
+main .analyse > div:hover {
+  box-shadow: none;
+}
+
+main .analyse > div .status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .analyse h3{
+  margin-left: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+main .analyse h1{
+  font-weight: 600;
+}
+
+main .analyse .progress-circle {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+}
+
+main .analyse svg {
+  width: 7rem;
+  height: 7rem;
+}
+
+main .analyse svg circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+
+main .analyse .sales svg circle {
+  stroke: var(--color-success);
+  stroke-dashoffset: -30;
+  stroke-dasharray: 200;
+}
+
+main .analyse .progress-circle .percentage {
+  position: absolute;
+  top: 10px;
+  left: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+/* WSZYSTKIE KARTY */
+.admin-cards-container {
+  display: grid;
+  width: 96%;
+  color: var(--color-dark);
+  background-color: var(--color-background);
+  margin: 0 auto;
+  gap: 1.8rem;
+  grid-template-columns: 12rem auto;
+  font-size: 14px;
+  font-family: 'poppins', sans-serif;
+  user-select: none;
+}
+
+.all-cards-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  margin-left: 4rem;
+}
+
+.all-cards-container .cards-grid{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px; 
+}
+
+.container-settings .h1-title {
+  margin-top: 2rem;
+  margin-left: 3rem;
+  display: flex;
+  position: absolute;
+}
+
+ .admin-cards-container .h1-title {
+  font-size: 56px;
+  font-weight: 400;
+  margin: 1rem 3.5rem
+}
+
+.cards-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+
