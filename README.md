@@ -1,30 +1,66 @@
-# React + TypeScript + Vite
+# Prawda czy Wyzwanie
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Opis
 
-Currently, two official plugins are available:
+"Prawda czy Wyzwanie" to aplikacja internetowa, która umożliwia grę w popularną grę towarzyską. Projekt wykorzystuje technologie takie jak [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [React](https://reactjs.org/), [Bootstrap](https://getbootstrap.com/), [MongoDB](https://www.mongodb.com/), oraz [Express.js](https://expressjs.com/). Celem aplikacji jest dostarczenie interaktywnej rozrywki poprzez rozgrywkę w grę "Prawda czy Wyzwanie".
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![App Screenshot](https://i.imgur.com/dDzose8.png)
 
-## Expanding the ESLint configuration
+## Live
+Zobacz Demo: https://dawidzygmuntdev.pl/cards
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Wymagania Systemowe
 
-- Configure the top-level `parserOptions` property like this:
+Aby korzystać z "Prawda czy Wyzwanie", upewnij się, że na Twoim środowisku zainstalowane są:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- [Node.js](https://nodejs.org/) (w wersji v18.16.1. lub nowszej)
+- [MongoDB](https://www.mongodb.com/) (w wersji 7.0 lub nowszej)
+
+## Instalacja
+
+1. Sklonuj repozytorium na swój lokalny komputer.
+   ```
+   git clone git@github.com:dawidzygmunt/Truth-or-Dare.git
+   ```
+
+2. Przejdź do katalogu projektu.
+   ```
+   cd Truth-or-Dare
+   ```
+
+3. Zainstaluj zależności.
+   ```
+   npm install
+   ```
+
+4. Uruchom MongoDB na swoim systemie.
+
+## Konfiguracja
+
+1. Skonfiguruj połączenie z bazą danych MongoDB w pliku `.env`, korzystając z przykładowego pliku `.env.example`.
+
+## Uruchamianie
+
+Uruchom projekt za pomocą poniższej komendy:
+
+```bash
+npm start
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Otwórz przeglądarkę i przejdź do `http://localhost:3000`, aby zacząć grę w "Prawda czy Wyzwanie".
+
+## Dokumentacja
+
+Dokumentacja projektu znajduje się w katalogu `docs`. Przeczytaj pliki dokumentacji, aby zaznajomić się z dostępnymi funkcjami i ich użyciem.
+
+## Zgłaszanie Błędów
+
+Jeśli znajdziesz błąd lub masz propozycję ulepszenia, zgłoś to, tworząc nowe zgłoszenie w zakładce "Issues" tego repozytorium.
+
+## Autorzy
+
+- Dawid Zygmunt (dawid.zygmunt86@gmail.com)
+
+## Licencja
+
+Ten projekt jest objęty licencją Creative Commons Attribution-NonCommercial 4.0 International. Zobacz plik LICENSE.md, aby uzyskać więcej informacji.
