@@ -1,10 +1,27 @@
+import { Card, CardContent } from '@/components/ui/card'
 import ContainerApp from '@/components/ui/containerApp'
-import React from 'react'
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
+
 
 const Messages = () => {
   return (
     <ContainerApp title='Poczta'>
-      Wiadomości
+      <Card>
+        <CardContent>
+          <ResizablePanelGroup direction='vertical'>
+            <ResizablePanel>
+              <ResizableHandle />
+            </ResizablePanel>
+            <ResizablePanel>
+              <ResizableHandle />
+            </ResizablePanel>
+          </ResizablePanelGroup>
+        </CardContent>
+      </Card>
     </ContainerApp>
   )
 }

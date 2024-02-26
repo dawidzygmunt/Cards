@@ -1,28 +1,26 @@
 import { useState } from "react"
 import axios from "axios"
-import { Navigate } from "react-router-dom"
+import { Button } from "../ui/button"
+import toast from "react-hot-toast"
 
+interface SinglePlayerProps {
+  playerName: string
+  playerID: string
+}
 
+const SinglePlayer: React.FC<SinglePlayerProps> = ({
+  playerName,
+  playerID
+}) => {
 
-const SinglePlayer = (props) => {
-  const [goToEditPlayer, setGoToEditPlayer] = useState(false)
   const [shouldHide, setShouldHide] = useState(false)
 
-  if (goToEditPlayer) {
-    return <Navigate to='/edit-player' />
-  }
 
-
-
-
-
-
-
+  // delete player
   const handleDeleteButton = async () => {
-    console.log(playerID);
     const response = await axios.delete('/api/v1/players/' + playerID)
     if (!response) {
-      alert('Nie poprawne ID')
+      toast.error('Wystąpił błąd')
     }
     else {
       setShouldHide(true)
@@ -31,15 +29,15 @@ const SinglePlayer = (props) => {
 
 
   return (
-    <div className={styles["single-player"]} style={{ display: shouldHide ? 'none' : 'flex' }}>
-      <h3>{playerName}</h3>
-      <span>
-        <button className={styles["form-edit-btn"]}
-          onClick={() => {
-            setGoToEditPlayer(true)
-          }}>Edytuj</button>
-        <button className={styles["form-delete-btn"]} onClick={handleDeleteButton}>Usuń</button>
-      </span>
+    <div className="container">
+      <div className="flex justify-between items-center border-2 border-black rounded-lg m-2 p-2 w-full min-w-[400px]" style={{ display: shouldHide ? 'none' : 'flex' }}>
+        <h3 className="ml-2">{playerName}</h3>
+        <span>
+          <Button variant="destructive" size="sm" className="mx-1" onClick={handleDeleteButton}>
+            Usuń
+          </Button>
+        </span>
+      </div>
     </div>
   )
 }

@@ -9,7 +9,7 @@ import { LibraryBig } from 'lucide-react'
 
 function SideNavbar() {
   return (
-    <aside className='w-[260px] h-screen flex'>
+    <aside className='w-[180px] h-[93vh] flex'>
       <div className="fixed left-0 top-0">
         <div className="flex m-4">
           <img src='logo.png' alt="logo" className='w-[40px] h-[50px] mr-3' />

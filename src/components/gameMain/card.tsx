@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './card.css'
 import { Card as CardType } from 'types';
 
@@ -12,26 +11,11 @@ const Card: React.FC<CardProps> = ({
 
   const versionText = 'Classic'
 
-  const [isHovered, setIsHovered] = useState(false);
-  const [isDeleted, setIsDeleted] = useState(false);
-  const [isChallenge, setIsChallenge] = useState(null);
 
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-
-
-  const stylized = isHovered ? 'card-cover-active' : 'card-cover-normal'
 
   return (
-    <div className='flex'>
-      <div className='card shadow-xl w-[250px] h-[350px] rounded-lg relative' onClick={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div className='flex' key={data.id}>
+      <div className='card shadow-xl w-[250px] h-[300px] border border-black rounded-lg relative'>
         <div className='font-bold text-4xl mb-4'>
           <h1>{data.typ}</h1>
         </div>

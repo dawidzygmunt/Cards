@@ -85,7 +85,7 @@ const AdminNewCard = () => {
 
 
   return (
-    <ContainerApp title="Dodaj Kartę">
+    <ContainerApp title="Dodaj Kartę" display={true}>
       <div className="flex gap-4">
         <div className='flex flex-col w-[60%] xl:px-20 xl:pr-40'>
           <Card>

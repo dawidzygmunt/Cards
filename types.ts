@@ -6,3 +6,9 @@ export interface Card {
   kara: number,
   wersja: string | null
 }
+
+export interface Player {
+  id: string,
+  playerName: string,
+  questionValue: number
+}
