@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input"
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
+import { on } from 'events'
 
 
 interface Player {
@@ -37,14 +38,6 @@ const formSchema = z.object({
 
 const NewGame = () => {
   const [players, setPlayers] = useState<Player[]>([])
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-  }, [])
-
-
-
 
   const cloneCollection = async () => {
     try {
@@ -55,6 +48,11 @@ const NewGame = () => {
     }
   }
 
+  const goMainButtonHandle: React.MouseEventHandler = () => {
+    cloneCollection()
+    navigate('/main')
+  }
+
 
   const showPlayers = async () => {
     try {
@@ -62,17 +60,13 @@ const NewGame = () => {
       const fetchedPlayers = respond.data.players;
       setPlayers(fetchedPlayers)
       console.log(fetchedPlayers);
-      setLoading(false)
     } catch (error) {
       toast.error('Wystapil blad')
-      setLoading(false)
     }
   }
 
   useEffect(() => {
     showPlayers()
-    cloneCollection()
-
   }, [])
 
 
@@ -102,27 +96,29 @@ const NewGame = () => {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-      <h3>Nazwa Gracza</h3>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex">
-          <div className='flex items-center justify-center'>
-            <FormField
-              control={form.control}
-              name="playerName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel> </FormLabel>
-                  <FormControl>
-                    <Input placeholder="np. Tomek" {...field} className='min-w-[250px]' />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" className='ml-3 mt-[7px]'>Dodaj</Button>
-          </div>
-        </form>
-      </Form>
+      <div className='bg-white shadow-xl px-10 py-4 pb-6 rounded-md'>
+        <h3>Nazwa Gracza</h3>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex">
+            <div className='flex items-center justify-center'>
+              <FormField
+                control={form.control}
+                name="playerName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel> </FormLabel>
+                    <FormControl>
+                      <Input placeholder="np. Tomek" {...field} className='min-w-[250px]' />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" className='ml-3 mt-[7px]'>Dodaj</Button>
+            </div>
+          </form>
+        </Form>
+      </div>
 
       <div className='flex flex-col mt-20'>
         {players.map((player) => (
@@ -139,7 +135,7 @@ const NewGame = () => {
 
         <Button
           className='mx-1'
-          onClick={() => navigate('/main')}
+          onClick={goMainButtonHandle}
         >
           Dalej
         </Button>

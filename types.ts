@@ -1,5 +1,5 @@
 export interface Card {
-  id: string,
+  _id: string,
   tresc: string,
   typ: string,
   ilosc: number,
@@ -8,7 +8,7 @@ export interface Card {
 }
 
 export interface Player {
-  id: string,
+  _id: string,
   playerName: string,
   questionValue: number
 }
