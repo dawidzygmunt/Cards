@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from '@/components/ui/button'
-import { ArrowBigRightDash, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 const Settings = () => {
   return (
@@ -33,7 +33,7 @@ const Settings = () => {
             <CardDescription>W tym panelu przekonwertujesz stworzone karty do formatu pdf, gotowe do wydruku!</CardDescription>
           </CardHeader>
           <CardFooter>
-            <Button>
+            <Button >
               Przejdź
               <ChevronRight />
             </Button>

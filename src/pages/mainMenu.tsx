@@ -15,7 +15,7 @@ const MainMenu = () => {
         <ul>
           <li><button onClick={() => navigate('/newGame')}>Nowa gra</button></li>
           <li><button onClick={() => navigate('/main')}>Kontynuj</button></li>
-          <li><button onClick={() => navigate('/settings')}>Ustawienia</button></li>
+          <li><button onClick={() => navigate('/admin/dashboard')}>Ustawienia</button></li>
           <li><button onClick={() => navigate('/credits')}>Credits</button></li>
 
         </ul>

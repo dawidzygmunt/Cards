@@ -9,19 +9,13 @@ import {
 
 const Messages = () => {
   return (
-    <ContainerApp title='Poczta'>
-      <Card>
-        <CardContent>
-          <ResizablePanelGroup direction='vertical'>
-            <ResizablePanel>
-              <ResizableHandle />
-            </ResizablePanel>
-            <ResizablePanel>
-              <ResizableHandle />
-            </ResizablePanel>
-          </ResizablePanelGroup>
-        </CardContent>
-      </Card>
+    <ContainerApp title='Poczta' display={true}>
+      <div className="flex flex-col items-center justify-center mt-24">
+        <div className="bg-white p-12 rounded-lg shadow-lg">
+          <h1 className="text-4xl font-bold">Poczta w trakcie budowy</h1>
+        </div>
+      </div>
+
     </ContainerApp>
   )
 }

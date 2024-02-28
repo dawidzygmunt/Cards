@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import AnalysticTile from "./analysticComponent"
 import axios from "axios"
 import ContainerApp from "@/components/ui/containerApp"
+import { Check, Diamond, Spade, TrendingUp } from "lucide-react"
 
 
 
@@ -11,44 +12,46 @@ const AdminPanel = () => {
   const [allBasic, setAllBasic] = useState<number>()
   const [truthBasic, setTruthBasic] = useState<number>()
   const [challengeBasic, setChallengeBasic] = useState<number>()
+  const [collections, setCollections] = useState<number>()
   const [all, setAll] = useState<number>()
   const [truth, setTruth] = useState<number>()
   const [challenge, setChallenge] = useState<number>()
 
   const allCardsBasic = async () => {
     const response = await axios.get('/api/v1/statistics/all-basic')
-    console.log(response.data.nbHits);
     setAllBasic(response.data.nbHits)
   }
 
   const truthCardsBasic = async () => {
     const response = await axios.get('/api/v1/statistics/truth-basic')
-    console.log(response.data.nbHits);
     setTruthBasic(response.data.nbHits)
   }
 
   const challengeCardsBasic = async () => {
     const response = await axios.get('/api/v1/statistics/challenge-basic')
-    console.log(response.data.nbHits);
     setChallengeBasic(response.data.nbHits)
   }
 
   const allCards = async () => {
     const response = await axios.get('/api/v1/statistics/all')
-    console.log(response.data.nbHits);
     setAll(response.data.nbHits)
   }
 
   const truthCards = async () => {
     const response = await axios.get('/api/v1/statistics/truth')
-    console.log(response.data.nbHits);
     setTruth(response.data.nbHits)
   }
 
   const challengeCards = async () => {
     const response = await axios.get('/api/v1/statistics/challenge')
-    console.log(response.data.nbHits);
     setChallenge(response.data.nbHits)
+  }
+
+  const getcolections = async () => {
+    const response = await axios.get('/api/v1/collections')
+    console.log(response);
+    
+    setCollections(response.data.nbHits)
   }
 
 
@@ -59,21 +62,34 @@ const AdminPanel = () => {
     allCards()
     truthCards()
     challengeCards()
+    getcolections()
+
   }, [])
 
 
   return (
-    <ContainerApp title="Statystyki">
+    <ContainerApp title="Dashboard" display={true}>
       <div className="flex">
-      <div className="grid grid-cols-3 gap-6">
-        <AnalysticTile title='Wszystkich kart' amount={allBasic as number} percentage='100' />
-        <AnalysticTile title='Pytania' amount={truthBasic as number} percentage='57' />
-        <AnalysticTile title='Wyzwania' amount={challengeBasic as number} percentage='87' />
+        <div className="grid grid-cols-2 gap-6">
+          <AnalysticTile title='Wszystkich kart' amount={allBasic as number} className="bg-blue-500">
+            <TrendingUp />
+          </AnalysticTile>
+          <AnalysticTile title='Kolekcje' amount={collections as number} className="bg-green-500">
+            <Spade />
+          </AnalysticTile>
+          <AnalysticTile title='Pytania' amount={truthBasic as number} className="bg-purple-500">
+            <Check />
+          </AnalysticTile>
+          <AnalysticTile title='Wyzwania' amount={challengeBasic as number} className="bg-red-500">
+            <Diamond />
+          </AnalysticTile>
+          {/* <AnalysticTile title='Ilość edycji' amount={all as number} />
+          <AnalysticTile title='Ilość kolekcji' amount={truth as number} />
+          <AnalysticTile title='Wyzwań z powt' amount={challenge as number} /> */}
+        </div>
 
-        <AnalysticTile title='Wszystkie z powt' amount={all as number} percentage='98' />
-        <AnalysticTile title='Pytań z powt' amount={truth as number} percentage='57' />
-        <AnalysticTile title='Wyzwań z powt' amount={challenge as number} percentage='87' />
-      </div>
+
+
 
 
 

@@ -5,7 +5,7 @@ import NewGame from './pages/NewGame/newGame';
 import AdminPanel from './pages/Settings/adminPanel/homePage/adminPanel';
 import Credits from './pages/Credits/credits';
 import AdminNewCard from './pages/Settings/adminPanel/newCard/addCard';
-import { Analyse } from './pages/Settings/adminPanel/analyse/analyse';
+import Statistics from './pages/Settings/adminPanel/analyse/statistics';
 import SearchAllCards from './pages/Settings/adminPanel/AllCards/allCard';
 // import AdminSingleCard from './pages/Settings/adminPanel/AllCards/adminSignleCard';
 import Users from './pages/Settings/adminPanel/users/users';
@@ -33,11 +33,11 @@ const App = () => {
           <Route path='/' element={<MainMenu />}></Route>
           <Route path='/newGame' element={<NewGame />}></Route>
           <Route path='/main' element={<TruthOrDareGame />}></Route>
-          <Route path='/settings' element={<AdminPanel />}></Route>
+          <Route path='/admin/dashboard' element={<AdminPanel />}></Route>
           <Route path='/credits' element={<Credits />}></Route>
 
           <Route path='/admin/new-card' element={<AdminNewCard />}></Route>
-          <Route path='/admin/analyse' element={<Analyse />}></Route>
+          <Route path='/admin/statistics' element={<Statistics />}></Route>
           <Route path='/admin/users' element={<Users />}></Route>
 
           <Route path='/admin/editions' element={<CardEditions />}></Route>

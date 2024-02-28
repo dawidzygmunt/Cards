@@ -1,8 +1,8 @@
-import ContainerApp from '@/components/ui/containerApp'
+import ContainerApp from "@/components/ui/containerApp"
 
-const Users = () => {
+const Statistics = () => {
   return (
-    <ContainerApp title='Użytkownicy'>
+    <ContainerApp title="Statystyki" display={true}>
       <div className="flex flex-col items-center justify-center mt-24">
         <div className="bg-white p-12 rounded-lg shadow-lg">
           <h1 className="text-4xl font-bold">W trakcie budowy</h1>
@@ -12,4 +12,4 @@ const Users = () => {
   )
 }
 
-export default Users
+export default Statistics

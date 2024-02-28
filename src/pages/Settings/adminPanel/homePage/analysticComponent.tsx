@@ -1,28 +1,39 @@
+import { cn } from "@/lib/utils";
+
 interface AnalysticTileProps {
   title: string,
   amount: number,
-  percentage: string
+  className?: string | null
+  children?: React.ReactNode
 }
 
 const AnalysticTile: React.FC<AnalysticTileProps> = ({
   title,
   amount,
-  percentage
+  className,
+  children
 }) => {
   return (
-    <div className="bg-white p-4 rounded-3xl shadow-lg hover:shadow-none duration-300 ease-in-out">
-      <div className="flex justify-between items-center">
-        <div className="text-black">
-          <h3 className="ml-3">{title}</h3>
-          <h1>{amount}</h1>
-        </div>
-        <div className="relative w-[92px] h-[92px] rounded-[50%]">
-          <svg className="w-28 h-28" >
-            <circle cx='38' cy="38" r='36' className="fill-none stroke-[10] translate-x-1 translate-y-1 stroke-green-700"></circle>
-          </svg>
-          <div className="percentage">
-            <p>{percentage}%</p>
+    <div className={cn(
+      `bg-white rounded-md shadow-lg hover:shadow-xl duration-300 ease-in-out min-h-[200px] min-w-[320px]`
+    )}>
+
+      <div className="flex flex-col items-center justify-center pt-5">
+        <div className={cn(
+          `rounded-full w-[70px] h-[70px] shadow-lg ${className}`
+        )}>
+          <div className="flex justify-center items-center w-full h-full text-white">
+            {children}
           </div>
+        </div>
+        <p className="mt-3 text-slate-500">{title}</p>
+        <span className="text-2xl font-bold">{amount}</span>
+        <p>{ }</p>
+      </div>
+
+      <div className="flex mx-5">
+        <div className="flex items-center justify-center ">
+          <p></p>
         </div>
       </div>
     </div>

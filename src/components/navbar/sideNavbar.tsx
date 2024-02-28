@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 import AsideSingleItem from './asideComponent'
 import { LuLayoutDashboard, LuUser, LuLogOut, LuSettings } from 'react-icons/lu'
 import { MdReportGmailerrorred } from 'react-icons/md'
@@ -7,11 +9,17 @@ import { CgCardHearts } from 'react-icons/cg'
 import { LibraryBig } from 'lucide-react'
 
 
+
+
 function SideNavbar() {
+
+  const navigate = useNavigate()
+
+
   return (
-    <aside className='w-[180px] h-[93vh] flex'>
+    <aside className='w-[220px] h-[93vh] flex'>
       <div className="fixed left-0 top-0">
-        <div className="flex m-4">
+        <div className="flex m-4 hover:cursor-pointer" onClick={()=> navigate('/')}>
           <img src='logo.png' alt="logo" className='w-[40px] h-[50px] mr-3' />
           <h2 className='font-bold text-2xl'>
             Karty
@@ -20,9 +28,9 @@ function SideNavbar() {
         </div>
         <div className="flex flex-col bg-white mx-5 rounded-xl font-bold relative h-[88vh] shadow-2xl">
           <div className=''>
-            <AsideSingleItem icon={<LuLayoutDashboard />} title='Strona główna' path='/' />
+            <AsideSingleItem icon={<LuLayoutDashboard />} title='Strona główna' path='/admin/dashboard' />
             <AsideSingleItem icon={<LuUser />} title='Użytkownicy' path='/admin/users' active={true} />
-            <AsideSingleItem icon={<IoAnalyticsOutline />} title='Statystyki' path='/settings' />
+            <AsideSingleItem icon={<IoAnalyticsOutline />} title='Statystyki' path='/admin/statistics' />
             <AsideSingleItem icon={<LibraryBig />} title='Edycje' path='/admin/editions' />
             <AsideSingleItem icon={<CgCardHearts />} title='Przeglądaj' path='/admin/all-cards' />
             <AsideSingleItem icon={<AiOutlinePlus />} title='Dodaj nowe' path='/admin/new-card' />

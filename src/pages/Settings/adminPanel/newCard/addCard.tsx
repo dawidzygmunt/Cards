@@ -87,7 +87,7 @@ const AdminNewCard = () => {
   return (
     <ContainerApp title="Dodaj Kartę" display={true}>
       <div className="flex gap-4">
-        <div className='flex flex-col w-[60%] xl:px-20 xl:pr-40'>
+        <div className='flex flex-col min-w-[800px] xl:px-20 xl:pr-40'>
           <Card>
             <CardContent>
               <Form {...form}>
@@ -99,7 +99,7 @@ const AdminNewCard = () => {
                       <FormItem>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="w-full flex text-black font-bold my-2 text-2xl justify-center ">
+                            <SelectTrigger className="w-full flex text-black font-bold my-2 mt-7 text-2xl justify-center ">
                               <SelectValue placeholder="Prawda" />
                             </SelectTrigger>
                           </FormControl>

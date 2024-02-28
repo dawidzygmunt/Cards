@@ -44,7 +44,7 @@ const SingleCollection: React.FC<SingleCollectionProps> = ({
             <ContextMenuTrigger>
               <div
                 className="w-[200px] h-[200px] bg-red-200 rounded-xl flex justify-center items-center
-              text-center hover:bg-red-300 hover:cursor-pointer transition-all duration-300 "
+                  text-center hover:bg-red-300 hover:cursor-pointer transition-all duration-300 "
               >
                 <div className="text-center flex flex-col justify-center items-center">
                   {data.nazwa}
