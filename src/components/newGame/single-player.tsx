@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 import { Button } from "../ui/button"
 import toast from "react-hot-toast"
+import { Trash2 } from "lucide-react"
 
 interface SinglePlayerProps {
   playerName: string
@@ -30,11 +31,11 @@ const SinglePlayer: React.FC<SinglePlayerProps> = ({
 
   return (
     <div className="container">
-      <div className="flex justify-between items-center border-2 border-black rounded-lg m-2 p-2 w-full min-w-[400px]" style={{ display: shouldHide ? 'none' : 'flex' }}>
-        <h3 className="ml-2">{playerName}</h3>
+      <div className="flex justify-between items-center bg-white shadow-lg rounded-lg m-2 p-2 w-full min-w-[400px]" style={{ display: shouldHide ? 'none' : 'flex' }}>
+        <h3 className="ml-2 text-xl">{playerName}</h3>
         <span>
-          <Button variant="destructive" size="sm" className="mx-1" onClick={handleDeleteButton}>
-            Usuń
+          <Button variant="destructive" size="sm" className="mx-1 px-4 py-1 text-xs" onClick={handleDeleteButton}>
+            <Trash2 size={15}/>
           </Button>
         </span>
       </div>
