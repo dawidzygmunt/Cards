@@ -28,7 +28,7 @@ const App = () => {
     <div className=''>
       <ToastProvider />
 
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename='/cards'>
         <Routes>
           <Route path='/' element={<MainMenu />}></Route>
           <Route path='/newGame' element={<NewGame />}></Route>
