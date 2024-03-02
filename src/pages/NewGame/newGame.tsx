@@ -16,7 +16,6 @@ import {
 import { Input } from "@/components/ui/input"
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
-import { on } from 'events'
 
 
 interface Player {

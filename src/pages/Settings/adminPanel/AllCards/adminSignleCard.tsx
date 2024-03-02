@@ -12,7 +12,6 @@ const AdminSingleCard: React.FC<AdminSingleCardProps> = ({
 }) => {
   return (
     <div>
-      {data.label}
       {data.kara}
     </div>
   )

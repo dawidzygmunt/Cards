@@ -1,5 +1,4 @@
 import ContainerApp from '@/components/ui/containerApp'
-import React from 'react'
 
 const Tickets = () => {
   return (

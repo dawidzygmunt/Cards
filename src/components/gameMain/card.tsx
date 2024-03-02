@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({
 
 
   return (
-    <div className='flex' key={data.id}>
+    <div className='flex' key={data._id}>
       <div className='card shadow-xl w-[250px] h-[300px] border border-black rounded-lg relative'>
         <div className='font-bold text-4xl mb-4'>
           <h1>{data.typ}</h1>

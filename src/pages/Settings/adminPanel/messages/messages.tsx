@@ -1,11 +1,4 @@
-import { Card, CardContent } from '@/components/ui/card'
 import ContainerApp from '@/components/ui/containerApp'
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable"
-
 
 const Messages = () => {
   return (
@@ -15,7 +8,6 @@ const Messages = () => {
           <h1 className="text-4xl font-bold">Poczta w trakcie budowy</h1>
         </div>
       </div>
-
     </ContainerApp>
   )
 }

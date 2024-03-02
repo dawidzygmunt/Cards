@@ -1,7 +1,18 @@
+import React from "react"
 import { cn } from "../../../lib/utils"
 import { Link, useResolvedPath, useMatch } from "react-router-dom"
 
-const AsideSingleItem = (props) => {
+
+interface AsideSingleItemProps {
+  path: string
+  title: string
+  icon: JSX.Element
+  className?: string
+}
+
+
+
+const AsideSingleItem: React.FC<AsideSingleItemProps> = (props) => {
   const resolvedPath = useResolvedPath(props.path)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 

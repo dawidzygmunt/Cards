@@ -1,7 +1,6 @@
 import ContainerApp from '@/components/ui/containerApp'
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,

@@ -19,7 +19,7 @@ function SideNavbar() {
   return (
     <aside className='w-[220px] h-[93vh] flex'>
       <div className="fixed left-0 top-0">
-        <div className="flex m-4 hover:cursor-pointer" onClick={()=> navigate('/')}>
+        <div className="flex m-4 hover:cursor-pointer" onClick={() => navigate('/')}>
           <img src='logo.png' alt="logo" className='w-[40px] h-[50px] mr-3' />
           <h2 className='font-bold text-2xl'>
             Karty
@@ -29,7 +29,7 @@ function SideNavbar() {
         <div className="flex flex-col bg-white mx-5 rounded-xl font-bold relative h-[88vh] shadow-2xl">
           <div className=''>
             <AsideSingleItem icon={<LuLayoutDashboard />} title='Strona główna' path='/admin/dashboard' />
-            <AsideSingleItem icon={<LuUser />} title='Użytkownicy' path='/admin/users' active={true} />
+            <AsideSingleItem icon={<LuUser />} title='Użytkownicy' path='/admin/users' />
             <AsideSingleItem icon={<IoAnalyticsOutline />} title='Statystyki' path='/admin/statistics' />
             <AsideSingleItem icon={<LibraryBig />} title='Edycje' path='/admin/editions' />
             <AsideSingleItem icon={<CgCardHearts />} title='Przeglądaj' path='/admin/all-cards' />

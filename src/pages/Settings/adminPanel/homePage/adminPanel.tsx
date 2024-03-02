@@ -83,9 +83,9 @@ const AdminPanel = () => {
           <AnalysticTile title='Wyzwania' amount={challengeBasic as number} className="bg-red-500">
             <Diamond />
           </AnalysticTile>
-          {/* <AnalysticTile title='Ilość edycji' amount={all as number} />
+          <AnalysticTile title='Ilość edycji' amount={all as number} />
           <AnalysticTile title='Ilość kolekcji' amount={truth as number} />
-          <AnalysticTile title='Wyzwań z powt' amount={challenge as number} /> */}
+          <AnalysticTile title='Wyzwań z powt' amount={challenge as number} />
         </div>
 
 

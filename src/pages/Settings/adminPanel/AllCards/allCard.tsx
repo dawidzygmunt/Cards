@@ -94,8 +94,8 @@ const SearchAllCards = () => {
         <ScrollArea className="p-4 w-full h-[88vh]">
           <div className="flex justify-center gap-10 flex-wrap border rounded-lg p-5">
             {cards.map((card: CardType) => (
-              <div key={card.id}>
-                <Card data={card} key={card.id} />
+              <div key={card._id}>
+                <Card data={card} key={card._id} />
               </div>
             ))}
           </div>
