@@ -25,7 +25,7 @@ const TruthOrDareGame = () => {
     console.log(players);
   }
 
-  const nextPlayer = () => {
+  const nextPlayer = async () => {
     if (isFirst) {
       setIsFirst(false)
       return
@@ -34,6 +34,7 @@ const TruthOrDareGame = () => {
       setCurrentPlayerIndex(0)
     } else {
       setCurrentPlayerIndex(currentPlayerIndex + 1)
+      
     }
   }
 
@@ -60,7 +61,7 @@ const TruthOrDareGame = () => {
       questionValue: updatedQuestionValue,
     };
     console.log(updatedPlayer);
-    
+
 
     // Stworzenie nowej tablicy graczy z zaktualizowanym obiektem gracza na odpowiednim indeksie
     const updatedPlayers = [...players];
@@ -71,10 +72,11 @@ const TruthOrDareGame = () => {
   }
 
 
-
-
+  
+  
   const getQuestion = async () => {
     setIsLoading(true)
+    nextPlayer()
     if (players[currentPlayerIndex].questionValue > 1) {
       const NoQuestion = {
         typ: "Ponad Limit",
@@ -106,8 +108,9 @@ const TruthOrDareGame = () => {
       return
     }
 
-
     const card = response.data.card[0]  // [0] jest dlatego że api zwraca tablice mimio zwracania tylko jednego elementu
+    console.log(players[currentPlayerIndex].playerName);
+    
     setCard(card)
 
     // Zmiania wartości ilosc w pytaniu w bazie danych
@@ -115,8 +118,9 @@ const TruthOrDareGame = () => {
       ilosc: card.ilosc - 1
     }
     await axios.patch(`/api/v1/game/${card._id}`, patchData)
+
     updateQuestonValuev2()
-    nextPlayer()
+    console.log(players[currentPlayerIndex].playerName);
     setIsLoading(false)
     // setPlayers(updatedPlayers)
   }
@@ -170,11 +174,11 @@ const TruthOrDareGame = () => {
         <Button onClick={getDare} className='bg-rose-600' disabled={isLoading}>
           Wyzwanie
         </Button>
-        {/* <Button onClick={getPlayers}>
+        <Button onClick={() => console.log(players[currentPlayerIndex])}>
           Techniczny
-        </Button> */}
+        </Button>
         <Button onClick={() => console.log(players)}>
-          Techniczny v2
+          Pokaz graczy
         </Button>
       </div>
     </div >

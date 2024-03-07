@@ -41,7 +41,7 @@ const formSchema = z.object({
   wersja: z.string().min(2, {
     message: "Wybierz wersję karty",
   }),
-  ilosc: z.number().min(1, {
+  ilosc: z.coerce.number().min(1, {
     message: "Wybierz ilość powtórzeń",
   }),
   tresc: z.string().min(5, {
