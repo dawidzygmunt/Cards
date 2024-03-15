@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-
 import AsideSingleItem from './asideComponent'
 import { LuLayoutDashboard, LuUser, LuLogOut, LuSettings } from 'react-icons/lu'
 import { MdReportGmailerrorred } from 'react-icons/md'
@@ -7,6 +6,7 @@ import { AiOutlineMail, AiOutlinePlus } from 'react-icons/ai'
 import { IoAnalyticsOutline } from 'react-icons/io5'
 import { CgCardHearts } from 'react-icons/cg'
 import { LibraryBig } from 'lucide-react'
+import logo from '/logo1.png'
 
 
 
@@ -15,12 +15,11 @@ function SideNavbar() {
 
   const navigate = useNavigate()
 
-
   return (
     <aside className='w-[220px] h-[93vh] flex'>
       <div className="fixed left-0 top-0">
-        <div className="flex m-4 hover:cursor-pointer" onClick={() => navigate('/')}>
-          <img src='logo.png' alt="logo" className='w-[40px] h-[50px] mr-3' />
+        <div className="flex m-4 hover:cursor-pointer justify- items-center" onClick={() => navigate('/')}>
+          <img src={logo} alt="logo" className='w-[30px] h-[30px] rounded-lg mr-3' />
           <h2 className='font-bold text-2xl'>
             Karty
             <span className="text-red-500">Party</span>

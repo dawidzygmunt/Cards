@@ -5,6 +5,7 @@ import { Card as CardType } from 'types'
 import { Button } from '../ui/button'
 import { Player } from 'types'
 
+let currentPlayer = 0
 
 const TruthOrDareGame = () => {
   const [card, setCard] = useState({})
@@ -12,6 +13,7 @@ const TruthOrDareGame = () => {
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [isFirst, setIsFirst] = useState(true)
+
 
   useEffect(() => {
     getPlayers()
@@ -30,11 +32,12 @@ const TruthOrDareGame = () => {
       setIsFirst(false)
       return
     }
-    if (currentPlayerIndex === players.length - 1) {
+    if (currentPlayer === players.length - 1) {
       setCurrentPlayerIndex(0)
+      currentPlayer = 0
     } else {
       setCurrentPlayerIndex(currentPlayerIndex + 1)
-      
+      currentPlayer = currentPlayer + 1
     }
   }
 
@@ -49,15 +52,15 @@ const TruthOrDareGame = () => {
   // }
 
   const updateQuestonValuev2 = () => {
-    const playerId = players[currentPlayerIndex]._id
+    const playerId = players[currentPlayer]._id
     console.log(playerId);
 
-    const questionValue = players[currentPlayerIndex].questionValue
+    const questionValue = players[currentPlayer].questionValue
     const updatedQuestionValue = questionValue + 1;
 
     // Stworzenie nowego obiektu gracza z zaktualizowaną wartością questionValue
     const updatedPlayer = {
-      ...players[currentPlayerIndex],
+      ...players[currentPlayer],
       questionValue: updatedQuestionValue,
     };
     console.log(updatedPlayer);
@@ -65,19 +68,19 @@ const TruthOrDareGame = () => {
 
     // Stworzenie nowej tablicy graczy z zaktualizowanym obiektem gracza na odpowiednim indeksie
     const updatedPlayers = [...players];
-    updatedPlayers[currentPlayerIndex] = updatedPlayer;
+    updatedPlayers[currentPlayer] = updatedPlayer;
 
     // Ustawienie nowej tablicy graczy
     setPlayers(updatedPlayers);
   }
 
 
-  
-  
+
+
   const getQuestion = async () => {
     setIsLoading(true)
     nextPlayer()
-    if (players[currentPlayerIndex].questionValue > 1) {
+    if (players[currentPlayer].questionValue > 1) {
       const NoQuestion = {
         typ: "Ponad Limit",
         tresc: "Możesz wziąć prawdę maksymalnie dwa razy pod rząd. Wykorzystałeś ten limit - czas na Wyzwanie"
@@ -109,8 +112,8 @@ const TruthOrDareGame = () => {
     }
 
     const card = response.data.card[0]  // [0] jest dlatego że api zwraca tablice mimio zwracania tylko jednego elementu
-    console.log(players[currentPlayerIndex].playerName);
-    
+    console.log(players[currentPlayer].playerName);
+
     setCard(card)
 
     // Zmiania wartości ilosc w pytaniu w bazie danych
@@ -120,7 +123,7 @@ const TruthOrDareGame = () => {
     await axios.patch(`/api/v1/game/${card._id}`, patchData)
 
     updateQuestonValuev2()
-    console.log(players[currentPlayerIndex].playerName);
+    console.log(players[currentPlayer].playerName);
     setIsLoading(false)
     // setPlayers(updatedPlayers)
   }
@@ -174,7 +177,7 @@ const TruthOrDareGame = () => {
         <Button onClick={getDare} className='bg-rose-600' disabled={isLoading}>
           Wyzwanie
         </Button>
-        <Button onClick={() => console.log(players[currentPlayerIndex])}>
+        <Button onClick={() => console.log(players[currentPlayer])}>
           Techniczny
         </Button>
         <Button onClick={() => console.log(players)}>
